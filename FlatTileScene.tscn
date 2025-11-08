@@ -5,5 +5,8 @@
 [node name="FlatTileScene" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-11, -22)
 texture = ExtResource("1_ps2sn")
-offset = Vector2(1, -16.5)
+offset = Vector2(12, 5.5)
+region_enabled = true
+region_rect = Rect2(30, 15, 66, 33)

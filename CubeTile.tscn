@@ -5,6 +5,8 @@
 [node name="CubeTile" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(88, 10)
+position = Vector2(0, 31)
 texture = ExtResource("1_nftix")
-offset = Vector2(-88, -10)
+offset = Vector2(0, -31)
+region_enabled = true
+region_rect = Rect2(31, 1, 67, 62)
