@@ -32,7 +32,6 @@ func generate_grid():
 			add_child(tile)
 			row.append(tile)
 		tiles.append(row)
-		tile.z_index = x + y
 		center_camera()
 
 # Converts (x, y) to screen position
