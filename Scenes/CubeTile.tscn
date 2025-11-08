@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://hbfnvreu5tjn"]
+
+[ext_resource type="Texture2D" uid="uid://cmem6qc0bsjxh" path="res://Art/tile_highlight.png" id="1_nftix"]
+
+[node name="CubeTile" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(88, 10)
+texture = ExtResource("1_nftix")
+offset = Vector2(-88, -10)

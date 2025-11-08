@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://1vemq5oyqv6s"]
+
+[ext_resource type="Texture2D" uid="uid://dttha0lokac1u" path="res://Art/tile_highlighttop.png" id="1_ps2sn"]
+
+[node name="FlatTileScene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ps2sn")
+offset = Vector2(1, -16.5)
