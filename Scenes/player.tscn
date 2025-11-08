@@ -1,23 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf54em41rbwsf"]
+[gd_scene load_steps=4 format=3 uid="uid://cljres4yxdtie"]
 
-[ext_resource type="Script" uid="uid://d21uoaf4ssuab" path="res://Scenes/tile.gd" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://csxqdukcluef8" path="res://Scenes/player.gd" id="1_v0iea"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_cvnsp"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2vrla"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6t5aa"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6phhs"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vgqql"]
-
-[node name="Player" type="StaticBody3D"]
+[node name="Robot" type="CharacterBody3D"]
 script = ExtResource("1_v0iea")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_cvnsp")
+mesh = SubResource("CapsuleMesh_2vrla")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
-shape = SubResource("BoxShape3D_6t5aa")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_6phhs")
 
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("BoxShape3D_vgqql")
+[node name="Camera3D" type="Camera3D" parent="."]
