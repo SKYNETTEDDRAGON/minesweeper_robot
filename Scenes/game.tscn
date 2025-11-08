@@ -1,5 +1,9 @@
-[gd_scene format=3 uid="uid://byrp45ap7s4j2"]
+[gd_scene load_steps=2 format=3 uid="uid://byrp45ap7s4j2"]
+
+[ext_resource type="Script" uid="uid://cgxq6dboi5btv" path="res://Scenes/game.gd" id="1_ebmjs"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_ebmjs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_smoothed = true
