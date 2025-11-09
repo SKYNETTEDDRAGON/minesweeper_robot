@@ -79,7 +79,7 @@ func check_tile_collision():
 		if collider and collider.is_in_group("tiles"):
 			# Trigger tile click when landing on it
 			if is_on_floor() and velocity.y <= 0:
-				if collider.has_signal("tile_clicked"):
+				if collider.has_signal("tile_clicked") and not collider.is_revealed:
 					collider.tile_clicked.emit(collider.grid_x, collider.grid_z)
 
 func die():

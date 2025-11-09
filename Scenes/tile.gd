@@ -45,16 +45,21 @@ func _ready():
 	material.albedo_color = unrevealed_color
 	mesh_instance.set_surface_override_material(0, material)
 	
-	# Setup label
+	# Setup label - create if it doesn't exist
 	if not label:
 		label = Label3D.new()
 		add_child(label)
+		print("Created Label3D for tile")
 	
-	label.position = Vector3(0, 0.2, 0)
+	label.position = Vector3(0, 0.5, 0)  # Raised higher to be more visible
 	label.rotation_degrees = Vector3(-90, 0, 0)
-	label.pixel_size = 0.01
-	label.font_size = 64
+	label.pixel_size = 0.005  # Smaller pixel size for sharper text
+	label.font_size = 128  # Larger font
+	label.outline_size = 8  # Add outline for better visibility
+	label.outline_modulate = Color.BLACK
 	label.visible = false
+	
+	print("Label setup complete for tile")
 
 func _input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton:
