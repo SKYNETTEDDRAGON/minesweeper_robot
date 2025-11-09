@@ -8,6 +8,7 @@
 radius = 0.30566406
 
 [node name="Robot" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5325294, 1.6664951, -2.2132828)
 script = ExtResource("1_v0iea")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

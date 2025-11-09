@@ -1,18 +1,13 @@
 extends CharacterBody3D
-
 @export var speed: float = 5.0
 @export var jump_velocity: float = 4.5
 @export var mouse_sensitivity: float = 0.003
-
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var is_alive = true
-
 @onready var camera = $Camera3D
-
 func _ready():
 	add_to_group("player")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
 func _input(event):
 	if not is_alive:
 		return
@@ -24,7 +19,10 @@ func _input(event):
 	
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
+	
+	# Right-click to mark tiles
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+		raycast_tile()
 func _physics_process(delta):
 	if not is_alive:
 		# Apply gravity when dead
@@ -70,7 +68,19 @@ func _physics_process(delta):
 	
 	# Check if stepped on a tile
 	check_tile_collision()
-
+func raycast_tile():
+	var space_state = get_world_3d().direct_space_state
+	var from = camera.global_position
+	var to = from + -camera.global_transform.basis.z * 100
+	
+	var query = PhysicsRayQueryParameters3D.create(from, to)
+	var result = space_state.intersect_ray(query)
+	
+	if result and result.collider and result.collider.is_in_group("tiles"):
+		var tile = result.collider
+		# Call a method to mark the tile green
+		if tile.has_method("mark_green"):
+			tile.mark_green()
 func check_tile_collision():
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
@@ -81,7 +91,6 @@ func check_tile_collision():
 			if is_on_floor() and velocity.y <= 0:
 				if collider.has_signal("tile_clicked") and not collider.is_revealed:
 					collider.tile_clicked.emit(collider.grid_x, collider.grid_z)
-
 func die():
 	if not is_alive:
 		return
