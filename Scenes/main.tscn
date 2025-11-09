@@ -21,6 +21,10 @@ script = ExtResource("1_jjgbg")
 transform = Transform3D(5.828947, 0, 0, 0, 1, 0, 0, 0, 4.774821, 0, 0, 0)
 mesh = SubResource("BoxMesh_8gbba")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(5.828947, 0, 0, 0, 1, 0, 0, 0, 4.774821, 5.7682104, 0.070158005, 21.860472)
+mesh = SubResource("BoxMesh_8gbba")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(5.6452317, 0, 0, 0, 1, 0, 0, 0, 4.797609, 0, 0, 0)
 shape = SubResource("BoxShape3D_jjvhh")
