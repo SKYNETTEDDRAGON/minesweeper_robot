@@ -73,4 +73,7 @@ shape = SubResource("BoxShape3D_kry3j")
 transform = Transform3D(5.6452317, 0, 0, 0, 1, 0, 0, 0, 4.797609, -7.4324055, 0, -2.4424005)
 shape = SubResource("BoxShape3D_jjvhh")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.728879, 5.1786194, 7.6191764)
+light_energy = 7.928
+omni_range = 45.385
