@@ -69,11 +69,20 @@ script = ExtResource("4_jjvhh")
 transform = Transform3D(1.0043818, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_kry3j")
 
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(49.49708, 0, 0, 0, -1.4914224e-06, -0.99188167, 0, 34.119766, -4.3356525e-08, 10.280508, -8.402357, 10.918627)
+mesh = SubResource("BoxMesh_8gbba")
+script = ExtResource("4_jjvhh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/MeshInstance3D7"]
+transform = Transform3D(1.0043818, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_kry3j")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(5.6452317, 0, 0, 0, 1, 0, 0, 0, 4.797609, -7.4324055, 0, -2.4424005)
 shape = SubResource("BoxShape3D_jjvhh")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.728879, 5.1786194, 7.6191764)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.728879, 38.39241, 7.6191764)
 light_energy = 7.928
 omni_range = 45.385
