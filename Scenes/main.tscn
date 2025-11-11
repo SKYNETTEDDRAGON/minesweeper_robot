@@ -1,13 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://doybrvly08a4q"]
+[gd_scene load_steps=10 format=3 uid="uid://doybrvly08a4q"]
 
 [ext_resource type="Script" uid="uid://c6auyweb3i6l" path="res://Scenes/playeradd.gd" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://btbqhs86hrvev" path="res://Scenes/game_manager.gd" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://cljres4yxdtie" path="res://Scenes/player.tscn" id="2_8gbba"]
 [ext_resource type="Script" uid="uid://nfqrfhspgb5n" path="res://Scenes/game_finisher.gd" id="4_jjvhh"]
+[ext_resource type="Shader" uid="uid://b8swem7dllhpi" path="res://Scenes/lava.gdshader" id="5_kry3j"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8gbba"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kry3j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_21xkr"]
+render_priority = 0
+shader = ExtResource("5_kry3j")
+shader_parameter/time_speed = 0.5
+shader_parameter/lava_color_1 = Color(1, 0.3, 0, 1)
+shader_parameter/lava_color_2 = Color(0.8, 0.1, 0, 1)
+shader_parameter/glow_intensity = 2.0
+shader_parameter/emissive_strength = 2.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jjvhh"]
 
@@ -72,6 +82,7 @@ shape = SubResource("BoxShape3D_kry3j")
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(49.49708, 0, 0, 0, -1.4914224e-06, -0.99188167, 0, 34.119766, -4.3356525e-08, 10.280508, -8.402357, 10.918627)
 mesh = SubResource("BoxMesh_8gbba")
+surface_material_override/0 = SubResource("ShaderMaterial_21xkr")
 script = ExtResource("4_jjvhh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/MeshInstance3D7"]
